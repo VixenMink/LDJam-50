@@ -26,7 +26,7 @@ var score = 0
 
 var gameOver = false
 var gameStarted = false
-
+var firstCat = false
 
 func _ready():
 	load_settings()
@@ -55,6 +55,7 @@ func new_game():
 	roomsExplored = 0
 	gameOver = false
 	gameStarted = false
+	firstCat = false
 	var dialog = Dialogic.start('Opening')
 	add_child(dialog)
 
@@ -83,7 +84,7 @@ func load_settings():
 func adjust_alertness(value: String):
 	alertnessValue += int(value)
 	print('Alert Adjusted: ', alertnessValue)
-	var fct = get_parent().get_node('ScreenGame/GameMain/').get_child(2).get_node('Player/Floating_Text_Manager')
+	var fct = get_parent().get_node('ScreenGame/GameMain/').get_child(4).get_node('Player/Floating_Text_Manager')
 	fct.show_value(value, 1)
 	if alertnessValue <= 0 and gameOver == false:
 		gameOver = true
@@ -94,7 +95,7 @@ func adjust_alertness(value: String):
 func adjust_sanity(value: String):
 	sanityValue += int(value)
 	print('Sanity Adjusted: ', sanityValue)
-	var fct = get_parent().get_node('ScreenGame/GameMain/').get_child(2).get_node('Player/Floating_Text_Manager')
+	var fct = get_parent().get_node('ScreenGame/GameMain/').get_child(4).get_node('Player/Floating_Text_Manager')
 	fct.show_value(value, 2)
 	if sanityValue <= 0 and gameOver == false:
 		gameOver = true
@@ -104,7 +105,7 @@ func adjust_sanity(value: String):
 
 func adjust_score(value: String):
 	score += int(value)
-	var fct = get_parent().get_node('ScreenGame/GameMain/').get_child(2).get_node('Player/Floating_Text_Manager')
+	var fct = get_parent().get_node('ScreenGame/GameMain/').get_child(4).get_node('Player/Floating_Text_Manager')
 	fct.show_value(value, 0)
 	print('Sanity Adjusted: ', score)
 	
@@ -112,7 +113,7 @@ func adjust_score(value: String):
 
 func _process(delta):
 	score += delta
-	if roomsExplored >= 3 and roomsExplored < 10:
+	if roomsExplored >= 3 and roomsExplored < 10 and difficulty == 1:
 		difficulty = 2
 	elif roomsExplored >= 8:
 		difficulty = 3

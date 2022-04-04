@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://levels/BaseRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Tilesets/EnvironmentTileset.tres" type="TileSet" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://levels/noninteractables/Dont.tscn" type="PackedScene" id=18]
 [ext_resource path="res://levels/noninteractables/FaceInGround.tscn" type="PackedScene" id=19]
 [ext_resource path="res://levels/interactables/clickable/CellphoneClickable.tscn" type="PackedScene" id=20]
+[ext_resource path="res://levels/CatLampTalk.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -222,81 +223,84 @@ position = Vector2( 1674, 849 )
 [node name="CellphoneClickable6" parent="Interactables" index="11" instance=ExtResource( 20 )]
 position = Vector2( 1449, 555 )
 
+[node name="CatLampTalk" parent="Interactables" index="12" instance=ExtResource( 21 )]
+position = Vector2( 687, 608 )
+
 [node name="ChaseEnemy" parent="." index="4"]
 position = Vector2( 1073, 404 )
 
-[node name="ImAStove" parent="Difficulty2" index="0" instance=ExtResource( 10 )]
+[node name="FaceRug" parent="Difficulty2" index="0" instance=ExtResource( 16 )]
+position = Vector2( 1367, 706 )
+
+[node name="ImAStove" parent="Difficulty2" index="1" instance=ExtResource( 10 )]
 position = Vector2( 1000, 184 )
 
-[node name="ImAStove4" parent="Difficulty2" index="1" instance=ExtResource( 10 )]
+[node name="ImAStove4" parent="Difficulty2" index="2" instance=ExtResource( 10 )]
 position = Vector2( 225, 625 )
 
-[node name="ImAStove2" parent="Difficulty2" index="2" instance=ExtResource( 10 )]
+[node name="ImAStove2" parent="Difficulty2" index="3" instance=ExtResource( 10 )]
 position = Vector2( 1591, 622 )
 
-[node name="ImAStove3" parent="Difficulty2" index="3" instance=ExtResource( 10 )]
-position = Vector2( 1396, 873 )
+[node name="ImAStove3" parent="Difficulty2" index="4" instance=ExtResource( 10 )]
+position = Vector2( 1391, 870 )
 
-[node name="SleepyGraffiti" parent="Difficulty2" index="4" instance=ExtResource( 12 )]
+[node name="SleepyGraffiti" parent="Difficulty2" index="5" instance=ExtResource( 12 )]
 position = Vector2( 755, 21 )
 
-[node name="SleepyGraffiti2" parent="Difficulty2" index="5" instance=ExtResource( 12 )]
+[node name="SleepyGraffiti2" parent="Difficulty2" index="6" instance=ExtResource( 12 )]
 position = Vector2( 562, 27 )
 rotation = 1.28456
 
-[node name="SleepyGraffiti3" parent="Difficulty2" index="6" instance=ExtResource( 12 )]
+[node name="SleepyGraffiti3" parent="Difficulty2" index="7" instance=ExtResource( 12 )]
 position = Vector2( 988, 27 )
 rotation = -0.427606
 
-[node name="SleepyGraffiti4" parent="Difficulty2" index="7" instance=ExtResource( 12 )]
+[node name="SleepyGraffiti4" parent="Difficulty2" index="8" instance=ExtResource( 12 )]
 position = Vector2( 2035, 847 )
 rotation = -0.71384
 scale = Vector2( 0.5, 5 )
 
-[node name="SideWallVent" parent="Difficulty2" index="8" instance=ExtResource( 13 )]
+[node name="SideWallVent" parent="Difficulty2" index="9" instance=ExtResource( 13 )]
 position = Vector2( 1199, 117 )
 
-[node name="SideWallVent3" parent="Difficulty2" index="9" instance=ExtResource( 13 )]
+[node name="SideWallVent3" parent="Difficulty2" index="10" instance=ExtResource( 13 )]
 position = Vector2( 1210, 153 )
 
-[node name="SideWallVent4" parent="Difficulty2" index="10" instance=ExtResource( 13 )]
+[node name="SideWallVent4" parent="Difficulty2" index="11" instance=ExtResource( 13 )]
 position = Vector2( 1247, 251 )
 
-[node name="SideWallVent6" parent="Difficulty2" index="11" instance=ExtResource( 13 )]
+[node name="SideWallVent6" parent="Difficulty2" index="12" instance=ExtResource( 13 )]
 position = Vector2( 1333, 235 )
 
-[node name="SideWallVent7" parent="Difficulty2" index="12" instance=ExtResource( 13 )]
+[node name="SideWallVent7" parent="Difficulty2" index="13" instance=ExtResource( 13 )]
 position = Vector2( 1370, 315 )
 
-[node name="Vent" parent="Difficulty2" index="13" instance=ExtResource( 14 )]
+[node name="Vent" parent="Difficulty2" index="14" instance=ExtResource( 14 )]
 position = Vector2( 474, 349 )
 
-[node name="Vent2" parent="Difficulty2" index="14" instance=ExtResource( 14 )]
+[node name="Vent2" parent="Difficulty2" index="15" instance=ExtResource( 14 )]
 position = Vector2( 27, 457 )
 
-[node name="Dont" parent="Difficulty2" index="15" instance=ExtResource( 18 )]
+[node name="Dont" parent="Difficulty2" index="16" instance=ExtResource( 18 )]
 position = Vector2( 1209, 866 )
 
-[node name="Dont2" parent="Difficulty2" index="16" instance=ExtResource( 18 )]
+[node name="Dont2" parent="Difficulty2" index="17" instance=ExtResource( 18 )]
 position = Vector2( 1543, 875 )
 
-[node name="Dont3" parent="Difficulty2" index="17" instance=ExtResource( 18 )]
+[node name="Dont3" parent="Difficulty2" index="18" instance=ExtResource( 18 )]
 position = Vector2( 1653, 747 )
 
-[node name="Dont4" parent="Difficulty2" index="18" instance=ExtResource( 18 )]
+[node name="Dont4" parent="Difficulty2" index="19" instance=ExtResource( 18 )]
 position = Vector2( 1105, 707 )
 
-[node name="Dont5" parent="Difficulty2" index="19" instance=ExtResource( 18 )]
+[node name="Dont5" parent="Difficulty2" index="20" instance=ExtResource( 18 )]
 position = Vector2( 1222, 521 )
 
-[node name="Dont6" parent="Difficulty2" index="20" instance=ExtResource( 18 )]
+[node name="Dont6" parent="Difficulty2" index="21" instance=ExtResource( 18 )]
 position = Vector2( 1146, 545 )
 
-[node name="Dont7" parent="Difficulty2" index="21" instance=ExtResource( 18 )]
+[node name="Dont7" parent="Difficulty2" index="22" instance=ExtResource( 18 )]
 position = Vector2( 1402, 527 )
-
-[node name="FaceRug" parent="Difficulty2" index="22" instance=ExtResource( 16 )]
-position = Vector2( 1367, 706 )
 
 [node name="Lamp" parent="Difficulty3" index="0" instance=ExtResource( 9 )]
 position = Vector2( 451, 435 )

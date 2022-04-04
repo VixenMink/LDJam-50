@@ -2,9 +2,9 @@ extends Node2D
 
 class_name SleepEnemies
 
+onready var pool = $Attacks.get_children()
+
 var count = 0
-
-
 var sleep_attack :NodePath = "res://enemies/Sleep_Attack.tscn"
 
 var attack_count = 0
@@ -24,8 +24,6 @@ func _ready():
 func _process(_delta):
 	if (look_for_kills == true) and (kill_items == kill_count):
 		can_free_player()
-	else:
-		return
 
 func _on_Hit_Box_body_entered(body):
 	if body is KinematicBody2D and Settings.curGameState != Settings.GAME_STATES.BATTLE:
@@ -46,7 +44,7 @@ func attack_position():
 		var cur_target = get_node('Target_Locations/Position2D'+str(pick))
 		targets.append(cur_target)
 	$Label.text = 'I am going to attack you with sleep things!!! BWAHAHAHA SLEEP THINGS!!'
-	$Tutorial.visible = true
+	$EscapePrompt.visible = true
 	$AnimationPlayer.play("Attacking")
 
 func spawn_attacks():
@@ -69,8 +67,7 @@ func insert_dead_baby_joke():
 	pass
 
 func can_free_player():
-	var pool = $Attacks.get_children()
-	if pool.size() == 0:
+	if (pool != null) and (pool.size() == 0):
 		Settings.curGameState = Settings.GAME_STATES.PLAY
 		$AnimationPlayer.play("Dying")
 		terminator()
@@ -81,7 +78,7 @@ func terminator():
 
 func byeeeeee():
 	var score_value = 50 * Settings.difficulty
-	Settings.adjust_score('score_value')
+	Settings.adjust_score(str(score_value))
 	if Settings.sanityValue > 5:
 		Settings.adjust_sanity('-5')
 	queue_free()

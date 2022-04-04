@@ -30,17 +30,15 @@ func attack_position():
 		pick = randi() % count + 1
 		var cur_target = get_node('Target_Locations/Position2D'+str(pick))
 		targets.append(cur_target)
-	$Tutorial.visible = true
+	$EscapePrompt.visible = true
 	$AnimationPlayer.play("Attacking")
 
 
 func can_free_player():
-	var pool = $Attacks.get_children()
-	if pool.size() == 0:
+	if (pool != null) and (pool.size() == 0):
 		Settings.curGameState = Settings.GAME_STATES.PLAY
 		$AnimationPlayer.play("Dying")
-	else:
-		pass
+
 
 func spawn_attacks():
 	attack_instance = load(str(sleep_attack))
@@ -75,11 +73,11 @@ func byeeeeee():
 
 
 	var score_value = 100 * Settings.difficulty
-	Settings.adjust_score('score_value')
+	Settings.adjust_score(str(score_value))
 	if Settings.sanityValue > 5:
 		Settings.adjust_sanity('-5')
 	
 
-	$Tutorial.queue_free()
+	$EscapePrompt.queue_free()
 	queue_free()
 
